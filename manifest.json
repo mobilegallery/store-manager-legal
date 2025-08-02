@@ -1,0 +1,22 @@
+{
+  "name": "Business Management Pro",
+  "short_name": "Manager",
+  "description": "A comprehensive application to manage sales, purchases, repairs, expenses, and party ledgers for your business. Track finances, manage customer and supplier relationships, and view detailed records all in one place.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1A202C",
+  "theme_color": "#2D3748",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Copy  login Business Management Pro",
+  "description": "A comprehensive application to manage sales, purchases, repairs, expenses, and party ledgers for your business. Track finances, manage customer and supplier relationships, and view detailed records all in one place.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "prompt": ""
+}

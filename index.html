@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager</title>
+    
+    <!-- PWA Tags -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#2D3748">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Manager">
+    <link rel="apple-touch-icon" href="./logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+               'light-input': '#e8eaed',
+               'brand': '#2D3748',
+               'brand-dark': '#1A202C',
+               'brand-input-dark': '#242C3B',
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .light .input-light-theme {
+        background-color: #e8eaed;
+        color: black;
+        border-color: #d1d5db; /* A light gray border */
+      }
+      .light .input-light-theme::placeholder {
+        color: #5f6368;
+      }
+      @media print {
+        header, nav, .no-print {
+          display: none !important;
+        }
+        main {
+          padding: 0 !important;
+        }
+        body {
+          background-color: white !important;
+        }
+        .printable-area {
+            box-shadow: none !important;
+            border: none !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.525.0",
+    "nepali-date-converter": "https://esm.sh/nepali-date-converter@3.3.1",
+    "@/types": "./types.ts",
+    "@/constants": "./constants.ts",
+    "chart.js": "https://esm.sh/chart.js@4.4.2"
+  }
+}
+</script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-100 dark:bg-brand-dark">
+    <div id="root"></div>
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <script async defer src="https://accounts.google.com/gsi/client"></script>
+    <script type="module" src="./index.tsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(error => {
+              console.log('ServiceWorker registration failed: ', error);
+            });
+        });
+      }
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
